@@ -26,7 +26,7 @@ export function Course() {
 
   return (
     <div>
-      <Header />
+      <Header subtitle={false} />
 
       <S.StyledCourseContent>
         <S.StyledCourseBox>
