@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import userSlice from '../store/AuthSlice';
+import authReducer from './authSlice';
+import coursesReducer from './coursesSlice';
+import uiReducer from './uiSlice';
+
 export default configureStore({
   reducer: {
-    storage: userSlice,
+    auth: authReducer,
+    courses: coursesReducer,
+    ui: uiReducer,
   },
 });

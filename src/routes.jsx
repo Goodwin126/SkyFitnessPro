@@ -11,13 +11,11 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/*" element={<NotFound />} />
 
       <Route path="/course/:id" element={<Course />} />
 
-      {/* Приватные роуты - доступны только авторизованным */}
       <Route
-        path="/workout-video-page"
+        path="/course/:courseId/workout-video-page/:id"
         element={
           <ProtectedRoute>
             <WorkoutVideo />
@@ -32,6 +30,7 @@ export const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 };

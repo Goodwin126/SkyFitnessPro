@@ -11,19 +11,32 @@ export const StyledTitle = styled.h2`
   font-weight: 500;
   font-style: Medium;
   font-size: 60px;
+  margin-bottom: 24px;
+  @media (max-width: 767px) {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const StyledpathLessons = styled.h3`
   font-weight: 400;
   font-style: Regular;
   font-size: 32px;
+  margin-bottom: 40px;
+
+  @media (max-width: 767px) {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const StyledLink = styled.a`
   color: black;
 `;
 
-export const StyledVideo = styled.video`
+export const StyledVideo = styled.iframe`
   width: 100%;
   height: 639px;
   border-radius: 30px;
@@ -59,19 +72,26 @@ export const StyledLessonProgressLine = styled.div`
 
 export const StyledInfoBox = styled.div`
   margin-top: 40px;
-  margin-bottom: 201px;
+  margin-bottom: 151px;
   padding: 40px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  width: 100%;
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.13);
+
+  @media (max-width: 767px) {
+    margin-top: 24px;
+    padding: 30px;
+  }
 `;
 
 export const StyledNameLesson = styled.h3`
   margin-bottom: 20px;
+  font-family: 'StratosSkyeng', sans-serif;
   font-weight: 400;
   font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
 `;
 
 export const StyleProgressBox = styled.div`
@@ -79,6 +99,12 @@ export const StyleProgressBox = styled.div`
   grid-template-columns: repeat(3, 1fr);
   row-gap: 20px;
   column-gap: 60px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
 `;
 
 export const BaseButton = styled.button`
@@ -118,6 +144,7 @@ export const StyleProgressItem = styled.div`
     display: flex;
     gap: 10px;
     flex-direction: column;
+    justify-content: space-between;
 }`;
 
 export const StyleProgressName = styled.p`

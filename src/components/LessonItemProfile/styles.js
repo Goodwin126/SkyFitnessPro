@@ -105,6 +105,14 @@ export const StyledLessonAddButton = styled.img`
     pointer;
   width: 32px;
   height: 32px;
+
+  /* Плавность для всех изменений (чтобы уменьшение было не резким) */
+  transition: transform 0.1s ease-in-out;
+
+  /* Эффект при нажатии */
+  &:active {
+    transform: scale(0.9); /* Уменьшаем до 90% от исходного размера */
+  }
 `;
 
 export const StyledLessonForTitleBox = styled.div`
@@ -133,16 +141,32 @@ export const StyledLessonTitle = styled.div`
 
 export const StyledLessonInfo = styled.div`
   display: flex;
+  max-width: 400px;
   flex-direction: column;
   gap: 20px;
   padding-top: 24px;
   padding-left: 30px;
   padding-right: 30px;
+
+  @media (max-width: 767px) {
+    padding-top: 24px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
 `;
 export const StyledLessonName = styled.h2`
-  font-weight: 500;
-  font-style: Medium;
+  font-family: 'StratosSkyeng', sans-serif;
+  font-weight: 400;
   font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
 
 export const StyledLessonInfoBox = styled.div`

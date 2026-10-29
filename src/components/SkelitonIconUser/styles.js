@@ -6,6 +6,11 @@ export const StyledPhotoBox = styled.div`
   height: 197px;
   border-radius: 20px;
   overflow: visible;
+
+  @media (max-width: 767px) {
+    width: 141px;
+    height: 141px;
+  }
 `;
 
 export const StyledProfilePhotoRectangle = styled.img`
@@ -22,6 +27,12 @@ export const StyledProfilePhotoIcon = styled.img`
 
   overflow: hidden;
   pointer-events: none;
+
+  @media (max-width: 767px) {
+    width: 52px;
+    height: 52px;
+    left: 48px;
+  }
 `;
 
 export const StyledProfilePhotoEllipse = styled.img`
@@ -29,8 +40,13 @@ export const StyledProfilePhotoEllipse = styled.img`
   width: 211px;
   height: 72px;
   top: 125px;
-  left: -7.17px;
 
   overflow: hidden;
   pointer-events: none;
+
+  @media (max-width: 767px) {
+    width: 151px;
+    height: 52px;
+    top: 90px;
+  }
 `;

@@ -4,9 +4,9 @@ export default function Title() {
   return (
     <div>
       <S.StyledTitleBox>
-        <S.StyledTitleH2>
+        <S.StyledTitle>
           Начните заниматься спортоми улучшите качество жизни
-        </S.StyledTitleH2>
+        </S.StyledTitle>
         <S.StyledSubtitleConteiner>
           <S.StyledSubtitleBox>
             <S.StyledSubtitle>Измени своё тело за полгода!</S.StyledSubtitle>
