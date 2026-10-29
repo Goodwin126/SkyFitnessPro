@@ -8,11 +8,13 @@ export const StyledLogoContainer = styled.div`
 
 export const StyledDescription = styled.article`
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   color: #000000;
   opacity: 0.5;
-  font-size: 18px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const StyledLoginButton = styled.button`
@@ -49,18 +51,21 @@ export const StyledLogoImg = styled.img`
 export const StyledHeaderBox = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 60px;
+  @media (max-width: 767px) {
+    padding-bottom: 40px;
+  }
 `;
 
 export const StyledProfileBox = styled.div`
+  z-index: 1001;
   display: flex;
   padding: 30px;
   margin-top: 24px;
   position: absolute;
   top: 100%;
   right: 0;
-  height: 258px;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.13);

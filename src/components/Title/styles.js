@@ -4,12 +4,19 @@ export const StyledTitleBox = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 50px;
+  @media (max-width: 767px) {
+    padding-bottom: 34px;
+  }
 `;
 
-export const StyledTitleH2 = styled.h2`
+export const StyledTitle = styled.article`
   font-weight: 500;
   font-size: 60px;
   line-height: 1.1;
+
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
 `;
 
 export const StyledSubtitleBox = styled.div`
@@ -25,9 +32,12 @@ export const StyledSubtitleConteiner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
-export const StyledSubtitle = styled.p`
+export const StyledSubtitle = styled.article`
   font-weight: 400;
   font-style: Regular;
   font-size: 32px;

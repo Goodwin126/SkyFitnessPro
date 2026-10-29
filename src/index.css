@@ -1,7 +1,10 @@
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ... твои шрифты ... */
 @font-face {
   font-family: 'StratosSkyeng';
   src:
@@ -15,4 +18,29 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- ДОБАВЬ ЭТО ВНИЗУ --- */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden; /* Запрещает горизонтальный скролл */
+    width: 100%; /* Принудительно сжимает контент до ширины экрана */
+    margin: 0; /* На всякий случай сбрасываем отступы */
+    padding: 0; /* Важно: у body не должно быть padding-left/right */
+  }
 }

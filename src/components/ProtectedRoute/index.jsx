@@ -1,15 +1,8 @@
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export const ProtectedRoute = ({ children }) => {
-  const user = useSelector(state => state.storage?.user) || {};
+  const user = useSelector(state => state.auth?.user);
 
-  const navigate = useNavigate();
-
-  if (!user) {
-    navigate('/');
-    return null;
-  }
-
-  return children;
+  return user ? children : <Navigate to="/" replace />;
 };

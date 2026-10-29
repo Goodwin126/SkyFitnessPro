@@ -1,18 +1,42 @@
-import * as S from './styles';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import * as S from './styles';
+import { shortenCourseName } from '../../utils/formatText';
 import calendar from '../../assets/calendar.svg';
 import watch from '../../assets/watch.svg';
 import signal_level from '../../assets/signal-level.svg';
 import AddCircle from '../../assets/Add-in-Circle.svg';
 
+import { openModal } from '../../store/uiSlice';
+import { addCousesByID } from '../../store/authSlice';
+import { loadCousesByID } from '../../store/coursesSlice';
+
 export default function LessonItem({ lesson }) {
+  const userCourses = useSelector(state => state.auth.user?.userCourse);
   const [isHovered, setIsHovered] = useState(false);
+  const dispatch = useDispatch();
+
+  const handlerClickOpenCourseSelection = () => {
+    dispatch(loadCousesByID(lesson.id));
+    dispatch(openModal('CourseSelection'));
+  };
+
+  const handeClickAddCourse = () => {
+    dispatch(addCousesByID(lesson.id));
+  };
   return (
     <S.StyledLessonItem key={lesson.id}>
-      <S.StyledLink to={`/course/${lesson.name}`}>
-        <S.StyledLessonImg src={lesson.imgLesson} alt="Activity" />
-      </S.StyledLink>
+      {userCourses &&
+      Object.prototype.hasOwnProperty.call(userCourses, lesson.id) ? (
+        <div onClick={handlerClickOpenCourseSelection}>
+          <S.StyledLessonImg src={lesson.listImage} alt="Activity" />
+        </div>
+      ) : (
+        <S.StyledLink to={`/course/${lesson.id}`}>
+          <S.StyledLessonImg src={lesson.listImage} alt="Activity" />
+        </S.StyledLink>
+      )}
 
       <S.StyledLessonAddButtonBox>
         <S.StyledLessonForTitleBox>
@@ -20,6 +44,7 @@ export default function LessonItem({ lesson }) {
             src={AddCircle}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={handeClickAddCourse}
             alt="Add-activity"
           />
 
@@ -30,8 +55,10 @@ export default function LessonItem({ lesson }) {
       </S.StyledLessonAddButtonBox>
 
       <S.StyledLessonInfo>
-        <S.StyledLink to={`/course/${lesson.name}`}>
-          <S.StyledLessonName>{lesson.nameLesson}</S.StyledLessonName>
+        <S.StyledLink to={`/course/${lesson.id}`}>
+          <S.StyledLessonName>
+            {shortenCourseName(lesson.nameRU)}
+          </S.StyledLessonName>
         </S.StyledLink>
         <S.StyledLessonInfoContainer>
           <S.StyledLessonInfoBox>

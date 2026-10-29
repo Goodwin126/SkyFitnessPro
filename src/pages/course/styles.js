@@ -5,18 +5,29 @@ export const StyledCourseContent = styled.div`
   flex-direction: column;
   padding-bottom: 46px;
   gap: 102px;
+
+  @media (max-width: 767px) {
+    gap: 156px;
+  }
 `;
 
 export const StyledCourseBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
+  @media (max-width: 767px) {
+    gap: 40px;
+  }
 `;
 
 export const StyledInfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 767px) {
+    gap: 24px;
+  }
 `;
 
 export const StyledSubtitle = styled.h2`
@@ -24,6 +35,11 @@ export const StyledSubtitle = styled.h2`
   font-size: 40px;
   margin: 0;
   color: #333;
+
+  @media (max-width: 767px) {
+    font-weight: 500;
+    font-size: 24px;
+  }
 `;
 
 export const StyledContainerRecommends = styled.div`
@@ -36,6 +52,10 @@ export const StyledContainerRecommends = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledRecommendCard = styled.div`
@@ -47,6 +67,11 @@ export const StyledRecommendCard = styled.div`
   gap: 12px;
   min-width: 300px;
   flex: 1 1 auto;
+
+  @media (max-width: 767px) {
+    min-height: 141px;
+    gap: 25px;
+  }
 `;
 
 export const StyledRecommenNumber = styled.span`
@@ -63,6 +88,10 @@ export const StyledRecommenText = styled.article`
   color: rgba(255, 255, 255, 1);
   flex-grow: 1;
   max-width: 100%;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
 
 export const StyledContainerDirections = styled.div`
@@ -74,6 +103,11 @@ export const StyledContainerDirections = styled.div`
   gap: 12px;
   width: 100%;
   box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const StyledDirectionImg = styled.img`
@@ -86,10 +120,18 @@ export const StyledDirectionItem = styled.div`
   display: flex;
   align-items: center;
   gap: 11px;
+
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
 `;
 
 export const StyledDirectionText = styled.article`
   font-weight: 400;
   font-size: 24px;
   color: #000;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
